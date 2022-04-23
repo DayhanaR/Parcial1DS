@@ -9,17 +9,15 @@ namespace Parcial1.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly DataContext _context;
 
-        public HomeController(ILogger<HomeController> logger, DataContext context)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            _context = context; 
         }
 
-        public async Task <IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Tickets.ToListAsync());
+            return View();
         }
 
         public IActionResult Privacy()
@@ -32,5 +30,6 @@ namespace Parcial1.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
     }
 }
