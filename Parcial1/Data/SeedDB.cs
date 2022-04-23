@@ -26,6 +26,7 @@ namespace Parcial1.Data
                 {
                     _context.Tickets.Add(new Ticket 
                     {
+                        WasUsed = false,
  
                     });
                 }

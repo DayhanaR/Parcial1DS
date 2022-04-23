@@ -6,7 +6,8 @@ namespace Parcial1.Data.Entities
     {
         public int Id { get; set; }
 
-        public bool WasUsed { get; set; } = false;
+        [Display(Name = "Ya fue usada")]
+        public bool WasUsed { get; set; }
 
         [Display(Name = "Documento")]
         [MaxLength(20, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
@@ -16,10 +17,10 @@ namespace Parcial1.Data.Entities
         [MaxLength(50, ErrorMessage = "El campo {0} debe tener máximo {1} caractéres.")]
         public string? Name { get; set; }
 
-        public Entrance? Entrace { get; set; }    
+        [Display(Name = "Entrada")]
+        public Entrance? Entrace { get; set; }
 
+        [Display(Name = "Fecha")]
         public DateTime? DateTime { get; set; }
-
-
     }
 }
